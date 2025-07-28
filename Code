@@ -1,0 +1,22 @@
+/*
+This simple yet powerful Arduino sketch reads analog input data (e.g., from a sensor like an LDR, potentiometer, or flex sensor) and triggers an LED based on a threshold.
+Design & develop by MD MIZANUR RAHMAN
+ */
+void setup() {
+pinMode(A0,INPUT);
+pinMode(13,OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+int data =analogRead(A0);
+Serial.println(data);
+delay(5);
+if(data<1000){
+  digitalWrite(13,HIGH);
+  delay(2000);
+}else{
+
+  digitalWrite(13,LOW);
+}
+}
